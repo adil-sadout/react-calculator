@@ -1,25 +1,32 @@
-import logo from './logo.svg';
 import './App.css';
+import {useState, useEffect } from "react";
+import CalcWrapper from "./components/CalcWrapper.js";
 
 function App() {
+  const [result, setResult] = useState("");
+
+  function handleButtonClick(e){
+
+    setResult(result + e.target.value)
+  }
+
+  function handleEqualBtnClick(){
+    
+    const totalResult = eval(result)
+
+    setResult(totalResult)
+  }
+
+  function handleClearBtnClick(){
+    setResult("")
+  }
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <main className="container">
+      <CalcWrapper result={result} onButtonClick={handleButtonClick} onEqualBtnClick={handleEqualBtnClick} onClearBtnClick={handleClearBtnClick} />
+    </main>
+  )
 }
 
 export default App;

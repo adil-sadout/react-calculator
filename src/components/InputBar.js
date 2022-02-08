@@ -1,4 +1,4 @@
-import { Input } from '@material-ui/core';
+import { Input } from '@mui/material';
 
 
 export default function InputBar(props){

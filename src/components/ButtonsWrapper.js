@@ -1,6 +1,6 @@
 import Buttons from "./Buttons.js";
 import {useEffect} from "react";
-import {Button} from '@mui/material/core';
+import {Button} from '@mui/material';
 
 
 export default function ButtonsWrapper(props){
